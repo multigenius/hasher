@@ -268,7 +268,7 @@ export default function PassportBuilder({ passportData, onUpdate, onNext }: Pass
                 : 'bg-[#2C2C2E] text-gray-500 cursor-not-allowed border border-[#3A3A3C]'
             }`}
           >
-            {currentBlock < blocks.length - 1 ? 'Next' : 'Continue'}
+            {currentBlock < blocks.length - 1 ? 'Next' : 'Create Passport'}
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>
