@@ -43,6 +43,28 @@ export default function WorldMap({ selectedCountries, onToggleCountry }: WorldMa
               <line x1="750" y1="0" x2="750" y2="500" stroke="#4A4A4C" strokeWidth="1" strokeDasharray="5,5" />
             </g>
 
+            <g opacity="0.4" stroke="#5A5A5C" strokeWidth="1" fill="none">
+              <path d="M 150,100 L 250,90 L 300,120 L 280,160 L 200,150 Z" />
+              <path d="M 300,120 L 400,110 L 450,140 L 420,180 L 350,170 L 320,150 Z" />
+              <path d="M 450,140 L 550,130 L 620,150 L 600,200 L 500,190 Z" />
+              <path d="M 620,150 L 720,140 L 780,160 L 750,210 L 650,200 Z" />
+              <path d="M 100,200 L 200,190 L 250,220 L 230,270 L 150,260 Z" />
+              <path d="M 250,220 L 350,210 L 420,240 L 400,290 L 300,280 Z" />
+              <path d="M 420,240 L 520,230 L 580,260 L 560,310 L 450,300 Z" />
+              <path d="M 580,260 L 680,250 L 750,270 L 720,320 L 620,310 Z" />
+              <path d="M 200,300 L 300,290 L 350,320 L 330,370 L 250,360 Z" />
+              <path d="M 350,320 L 450,310 L 520,340 L 500,390 L 400,380 Z" />
+              <path d="M 520,340 L 620,330 L 680,360 L 660,410 L 560,400 Z" />
+              <ellipse cx="180" cy="150" rx="40" ry="30" />
+              <ellipse cx="380" cy="240" rx="50" ry="35" />
+              <ellipse cx="650" cy="280" rx="45" ry="32" />
+              <ellipse cx="280" cy="350" rx="35" ry="25" />
+              <path d="M 750,180 Q 800,200 850,180 T 900,200" />
+              <path d="M 50,250 Q 100,280 150,260" />
+              <circle cx="720" cy="360" r="25" />
+              <circle cx="820" cy="300" r="20" />
+            </g>
+
             {selectedCountries.map((country) => {
               const pos = getMarkerPosition(country);
               const isHovered = hoveredCountry === country;

@@ -207,6 +207,15 @@ export default function PhotoUpload({ currentPhoto, onPhotoUpdate, hashName }: P
   }
 
   if (uploadMode === 'ai') {
+    const promptSuggestions = [
+      "A professional athlete in their 20s with a confident smile",
+      "A friendly tech entrepreneur in their 30s wearing casual business attire",
+      "A creative designer with glasses and artistic expression",
+      "A fitness enthusiast with athletic build and energetic look",
+      "A business professional in their 40s with formal appearance",
+      "A young student with a bright and optimistic expression"
+    ];
+
     return (
       <div className="space-y-4">
         <div className="bg-[#1C1C1E] rounded-2xl p-8 border border-[#3A3A3C]">
@@ -218,8 +227,22 @@ export default function PhotoUpload({ currentPhoto, onPhotoUpdate, hashName }: P
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-[#E0E0E0] mb-2">
-                Describe your passport photo
+                Choose a prompt or write your own
               </label>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
+                {promptSuggestions.map((suggestion, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setAiPrompt(suggestion)}
+                    disabled={isGenerating}
+                    className="px-3 py-2 bg-[#2C2C2E] text-[#E0E0E0] text-xs text-left rounded-lg border border-[#3A3A3C] hover:bg-[#3A3A3C] hover:border-[#CCFF00] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {suggestion}
+                  </button>
+                ))}
+              </div>
+
               <textarea
                 value={aiPrompt}
                 onChange={(e) => setAiPrompt(e.target.value)}
