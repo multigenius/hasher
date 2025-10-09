@@ -70,7 +70,7 @@ export default function PhotoUpload({ currentPhoto, onPhotoUpdate, hashName }: P
     setIsGenerating(true);
 
     try {
-      const prompt = `Professional passport photo style portrait: ${aiPrompt}. Clean background, well-lit, facing camera, suitable for official ID document.`;
+      const prompt = aiPrompt;
 
       const response = await fetch('https://image.pollinations.ai/prompt/' + encodeURIComponent(prompt), {
         method: 'GET',
@@ -208,12 +208,30 @@ export default function PhotoUpload({ currentPhoto, onPhotoUpdate, hashName }: P
 
   if (uploadMode === 'ai') {
     const promptSuggestions = [
-      "A professional athlete in their 20s with a confident smile",
-      "A friendly tech entrepreneur in their 30s wearing casual business attire",
-      "A creative designer with glasses and artistic expression",
-      "A fitness enthusiast with athletic build and energetic look",
-      "A business professional in their 40s with formal appearance",
-      "A young student with a bright and optimistic expression"
+      {
+        title: "NeoHash Portrait",
+        prompt: "A cinematic portrait of a hash runner, realistic facial likeness, wet skin highlights, soft sunlight, dynamic depth, trail dust and faint beer bubbles in the air, digital glow ambiance, natural but enhanced aesthetics, ultra-detailed textures, expressive atmosphere"
+      },
+      {
+        title: "Trail Hero Mode",
+        prompt: "A semi-realistic artistic depiction of a trail hero, dynamic composition, motion energy, forest or coastal trail environment, reflective sweat and dirt textures, cinematic lighting, expressive brush-like rendering, epic and natural"
+      },
+      {
+        title: "Hash Afterparty Glow",
+        prompt: "Realistic yet artistic portrait in a relaxed after-run pub scene, golden warm lighting, reflective beer glass glow, laughing expression, cinematic composition, digital painting style, lively atmosphere"
+      },
+      {
+        title: "Mythic Trail Persona",
+        prompt: "Stylized artistic depiction of a Trail Spirit, forest background, glowing On-On symbols in the mist, surreal light, soft painterly texture, ethereal yet grounded mood"
+      },
+      {
+        title: "Event Poster Style",
+        prompt: "Stylish cinematic poster of hash runners on a trail near the sea, dynamic composition, warm light, soft focus, symbolic On-On arrows, suitable for title overlay"
+      },
+      {
+        title: "HashBot Future ID",
+        prompt: "A futuristic digital avatar, glowing geometric elements, metallic reflections, soft AI-light glow, abstract background referencing trails and motion, cinematic contrast"
+      }
     ];
 
     return (
@@ -234,11 +252,12 @@ export default function PhotoUpload({ currentPhoto, onPhotoUpdate, hashName }: P
                 {promptSuggestions.map((suggestion, index) => (
                   <button
                     key={index}
-                    onClick={() => setAiPrompt(suggestion)}
+                    onClick={() => setAiPrompt(suggestion.prompt)}
                     disabled={isGenerating}
                     className="px-3 py-2 bg-[#2C2C2E] text-[#E0E0E0] text-xs text-left rounded-lg border border-[#3A3A3C] hover:bg-[#3A3A3C] hover:border-[#CCFF00] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {suggestion}
+                    <div className="font-semibold mb-1">{suggestion.title}</div>
+                    <div className="text-gray-500 text-[10px] leading-tight line-clamp-2">{suggestion.prompt.substring(0, 60)}...</div>
                   </button>
                 ))}
               </div>
@@ -246,7 +265,7 @@ export default function PhotoUpload({ currentPhoto, onPhotoUpdate, hashName }: P
               <textarea
                 value={aiPrompt}
                 onChange={(e) => setAiPrompt(e.target.value)}
-                placeholder="e.g., A friendly runner in their 30s with short brown hair, wearing a bright running shirt, smiling confidently"
+                placeholder="Describe your hash running scene: trail running in the forest, celebrating with beer after a run, jumping over obstacles, etc."
                 rows={4}
                 disabled={isGenerating}
                 className="w-full px-4 py-3 bg-[#2C2C2E] border border-[#3A3A3C] rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-[#B285FD] focus:ring-2 focus:ring-[#B285FD]/20 transition-all resize-none disabled:opacity-50"
@@ -255,7 +274,7 @@ export default function PhotoUpload({ currentPhoto, onPhotoUpdate, hashName }: P
 
             <div className="bg-[#2C2C2E] rounded-lg p-4">
               <p className="text-xs text-gray-400 leading-relaxed">
-                Tip: Be specific about appearance, age, clothing, and expression. The AI will create a professional passport-style photo based on your description.
+                Tip: Choose a hash-themed preset or describe your own scene. Think action, celebration, trails, and the spirit of hashing. The AI will create a unique image for your passport.
               </p>
             </div>
 
