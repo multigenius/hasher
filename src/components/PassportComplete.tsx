@@ -56,7 +56,7 @@ export default function PassportComplete({ passportData }: PassportCompleteProps
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Your Passport is Ready,{' '}
+            Your Passport Is Ready,{' '}
             <span className="bg-gradient-to-r from-[#CCFF00] via-[#FF289B] to-[#B285FD] bg-clip-text text-transparent">
               {passportData.hashName}
             </span>
@@ -65,11 +65,10 @@ export default function PassportComplete({ passportData }: PassportCompleteProps
 
           <div className="max-w-2xl mx-auto space-y-4 text-[#E0E0E0]">
             <p className="text-lg leading-relaxed">
-              Congratulations — you're officially part of <span className="font-bold text-[#CCFF00]">Founder Season One</span>.
+              Congratulations — you’ve joined <span className="font-bold text-[#CCFF00]">Founder Season One</span>.
             </p>
             <p className="leading-relaxed">
-              Thank you for contributing to the growth of our ecosystem. Your ideas and feedback
-              help keep the spirit of hashing alive for future generations.
+              Thank you for contributing to the growth of the ecosystem. Your ideas and feedback help preserve and strengthen the spirit of hashing for future generations.
             </p>
           </div>
         </div>
@@ -109,9 +108,9 @@ export default function PassportComplete({ passportData }: PassportCompleteProps
 
         <div className="mt-12 text-center">
           <p className="text-sm text-gray-400 leading-relaxed">
-            Your passport will become part of Hasher.AI's digital history.
+            Your passport becomes part of the digital history of Hasher.AI.
             <br />
-            Share it and show that you are one of the first to build the future of hashing.
+            Share it with your friends and show that you’re among the first building the future of hashing.
           </p>
         </div>
       </div>

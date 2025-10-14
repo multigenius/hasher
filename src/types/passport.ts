@@ -19,18 +19,18 @@ export interface VisitedLocation {
 }
 
 export type RunCountCategory =
-  | 'Newbie (1-10)'
-  | 'Experienced (10-50)'
-  | 'Veteran (50-200)'
-  | 'Legend (200-500)'
-  | 'Immortal (500+)';
+  | 'Fresh Paws (1-10)'
+  | 'Pathfinder (10-50)'
+  | 'Beer Chaser (50-200)'
+  | 'Trail Conqueror (200-500)'
+  | 'Legendary Phoenix (500+)';
 
 export const RUN_COUNT_OPTIONS: { value: RunCountCategory; label: string; badge: string }[] = [
-  { value: 'Newbie (1-10)', label: 'Newbie (1–10 runs)', badge: '🌱' },
-  { value: 'Experienced (10-50)', label: 'Experienced (10–50 runs)', badge: '⭐' },
-  { value: 'Veteran (50-200)', label: 'Veteran (50–200 runs)', badge: '🏃' },
-  { value: 'Legend (200-500)', label: 'Legend (200–500 runs)', badge: '🏆' },
-  { value: 'Immortal (500+)', label: 'Immortal (500+ runs)', badge: '👑' },
+  { value: 'Fresh Paws (1-10)', label: 'Fresh Paws (1–10 runs)', badge: '🐾' },
+  { value: 'Pathfinder (10-50)', label: 'Pathfinder (10–50 runs)', badge: '🧭' },
+  { value: 'Beer Chaser (50-200)', label: 'Beer Chaser (50–200 runs)', badge: '🍺' },
+  { value: 'Trail Conqueror (200-500)', label: 'Trail Conqueror (200–500 runs)', badge: '⚡' },
+  { value: 'Legendary Phoenix (500+)', label: 'Legendary Phoenix (500+ runs)', badge: '🔥' },
 ];
 
 export const COUNTRIES = [

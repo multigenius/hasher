@@ -11,9 +11,9 @@ export default function FounderVoice({ feedback, onUpdate, onNext }: FounderVoic
   const [localFeedback, setLocalFeedback] = useState(feedback);
 
   const examplePrompts = [
-    "Don't forget hashing is about people, not apps. Any feature should help us meet, not replace meetings.",
-    "The key is leaving room for chaos and silliness! Don't try to digitize and control absolutely everything.",
-    "Pay special attention to visitors. Make it as easy to join a new kennel as it is to meet old friends.",
+    "Remember, hashing is about people, not apps. Any feature should help us meet — not replace the meetings.",
+    "The main thing is to keep room for chaos and silliness! Don’t try to digitize and organize absolutely everything.",
+    "Pay special attention to visitors. Make joining a new kennel feel as easy and friendly as visiting old friends.",
   ];
 
   const handleSubmit = () => {
@@ -35,8 +35,9 @@ export default function FounderVoice({ feedback, onUpdate, onNext }: FounderVoic
 
         <div className="bg-[#2C2C2E] rounded-2xl p-8 shadow-2xl border border-[#3A3A3C] mb-6">
           <p className="text-[#E0E0E0] mb-6 leading-relaxed">
-            You are among the first to build the digital history of hashing. What, in your opinion,
-            is the true magic of hashing? How can we use technology to preserve and enhance it?
+            You’re among the first to help build the digital history of hashing.
+            What do you think is the true magic of hashing?
+            How can we preserve and amplify it through technology?
           </p>
 
           <div className="mb-6">

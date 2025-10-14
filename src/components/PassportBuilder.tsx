@@ -150,8 +150,8 @@ export default function PassportBuilder({ passportData, onUpdate, onNext }: Pass
     {
       id: 2,
       icon: Map,
-      title: 'Where have you left your mark?',
-      subtitle: 'Mark the countries where you have hashed',
+      title: 'Where Have You Left Your Pawprints?',
+      subtitle: 'Mark on the map the countries or cities where you’ve taken part in runs',
       content: (
         <WorldMap selectedCountries={visitedCountries} onToggleCountry={handleToggleCountry} />
       ),
@@ -160,8 +160,8 @@ export default function PassportBuilder({ passportData, onUpdate, onNext }: Pass
     {
       id: 3,
       icon: Camera,
-      title: 'Add Your Photo',
-      subtitle: 'Upload a photo or generate one with AI',
+      title: 'Your Hash Look',
+      subtitle: 'Upload a photo or generate your hash avatar with AI',
       content: (
         <PhotoUpload
           currentPhoto={passportData.photoUrl}
@@ -224,7 +224,7 @@ export default function PassportBuilder({ passportData, onUpdate, onNext }: Pass
             </span>
           </div>
           <p className="text-[#E0E0E0] mb-4">
-            Your Hash Passport is being created right now. Add some stamps from your story.
+            Your Hash Passport is being assembled right now. Complete it with the stamps of your story.
           </p>
 
           <div className="w-full bg-[#2C2C2E] rounded-full h-2 overflow-hidden">
