@@ -20,7 +20,7 @@ const PassportCard = forwardRef<HTMLDivElement, PassportCardProps>(({ passportDa
   return (
     <div
       ref={ref}
-      className="w-full max-w-2xl bg-gradient-to-br from-[#2C2C2E] to-[#1C1C1E] rounded-3xl p-8 shadow-2xl border-2 border-[#3A3A3C] relative overflow-hidden"
+      className="w-full max-w-2xl bg-gradient-to-br from-[#2C2C2E] to-[#1C1C1E] rounded-3xl p-8 shadow-2xl border-2 border-[#3A3A3C] relative"
       style={{ aspectRatio: '16/10' }}
     >
       <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#CCFF00]/10 to-[#FF289B]/10 rounded-full blur-3xl" />
@@ -30,7 +30,7 @@ const PassportCard = forwardRef<HTMLDivElement, PassportCardProps>(({ passportDa
         <div className="flex items-start justify-between mb-6">
           <div className="flex items-start gap-4">
             {passportData.photoUrl && (
-              <div className="w-24 h-24 rounded-xl overflow-hidden border-2 border-[#3A3A3C] flex-shrink-0 bg-[#1C1C1E]">
+              <div className="w-32 h-32 rounded-xl overflow-hidden border-2 border-[#3A3A3C] flex-shrink-0 bg-[#1C1C1E]">
                 <img
                   src={passportData.photoUrl}
                   alt={passportData.hashName}
@@ -39,18 +39,18 @@ const PassportCard = forwardRef<HTMLDivElement, PassportCardProps>(({ passportDa
               </div>
             )}
             <div>
-              <div className="inline-block px-4 py-2 bg-gradient-to-r from-[#CCFF00] to-[#FF289B] rounded-full mb-3">
-                <p className="text-xs font-bold text-[#1C1C1E] uppercase tracking-wider">
+              <div className="inline-block px-3 py-1 bg-gradient-to-r from-[#CCFF00] to-[#FF289B] rounded-full mb-2">
+                <p className="text-[10px] font-bold text-[#1C1C1E] uppercase tracking-wider">
                   Founder Season One
                 </p>
               </div>
-              <h2 className="text-3xl font-bold text-white mb-1 flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-white mb-1 flex items-center gap-2">
                 {passportData.originCountry && (
                   <span className="text-2xl">{getCountryFlag(passportData.originCountry)}</span>
                 )}
                 {passportData.hashName}
               </h2>
-              <p className="text-[#E0E0E0] text-sm">Hash Passport</p>
+              <p className="text-[#E0E0E0] text-xs">Hash Passport</p>
             </div>
           </div>
 
